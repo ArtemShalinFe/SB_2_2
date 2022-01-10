@@ -29,23 +29,24 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeRedValue() {
-        labelRedValue.text = String(sliderRedValue.value)
+        labelRedValue.text = String(format: "%.03f", sliderRedValue.value)
         updateAreaBackgroundColor()
     }
     
     @IBAction func changeGreenValue() {
-        labelGreenValue.text = String(sliderGreenValue.value)
+        labelGreenValue.text = String(format: "%.03f", sliderGreenValue.value)
         updateAreaBackgroundColor()
     }
     
     @IBAction func changeBlueValue() {
-        labelBlueValue.text = String(sliderBlueValue.value)
+        labelBlueValue.text = String(format: "%.03f", sliderBlueValue.value)
         updateAreaBackgroundColor()
     }
         
     func updateAreaBackgroundColor() {
         
-        let newColor = CIColor(red: CGFloat(sliderRedValue.value),      green: CGFloat(sliderGreenValue.value),
+        let newColor = CIColor(red: CGFloat(sliderRedValue.value),
+            green: CGFloat(sliderGreenValue.value),
             blue: CGFloat(sliderBlueValue.value)
         )
         areaColor.backgroundColor = UIColor(ciColor: newColor)
